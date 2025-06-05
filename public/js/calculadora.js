@@ -20,4 +20,30 @@ function calcularResultado() {
     return;
   }
   
+
+  let n1 = parseFloat(numero1);
+  let n2 = parseFloat(numero2);
+  let total;
+
+  if (operacion === "+") {
+    total = n1 + n2;
+  } else if (operacion === "-") {
+    total = n1 - n2;
+  } else if (operacion === "*") {
+    total = n1 * n2;
+  } else if (operacion === "/") {
+    if (n2 === 0) {
+      resultado.textContent = "No se puede dividir por cero.";
+      return;
+    }
+    total = n1 / n2;
+  } else {
+    resultado.textContent = "Debe seleccionar una operación.";
+    return;
+  }
+
+  resultado.textContent = "RESULTADO: " + total;
+ }
+ function limpiar() {
+
 }
