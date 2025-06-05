@@ -15,6 +15,9 @@ function calcularResultado() {
   let numero2 = document.getElementById("txt_numero_2").value;
 
   let resultado = document.getElementById("resultado_final");
-
+  if (numero1 === "" || numero2 === "") {
+    resultado.textContent = "Debe ingresar ambos números.";
+    return;
+  }
   
 }
