@@ -13,7 +13,12 @@
 
         <label for="txt_numero">INGRESE UN NÚMERO</label>
         <input type="number" id="txt_numero" class="form-control mb-3">
-
+            <div class="mb-3">
+                <button class="btn btn-primary mr-2 mb-2" onclick="seleccionarOperacion('+')">SUMAR</button>
+                <button class="btn btn-primary mr-2 mb-2" onclick="seleccionarOperacion('-')">RESTAR</button>
+                <button class="btn btn-primary mr-2 mb-2" onclick="seleccionarOperacion('*')">MULTIPLICAR</button>
+                <button class="btn btn-primary mb-2" onclick="seleccionarOperacion('/')">DIVIDIR</button>
+            </div>
 
         <label for="txt_numero">INGRESE OTRO NÚMERO</label>
         <input type="number" id="txt_numero_2" class="form-control mb-3">
