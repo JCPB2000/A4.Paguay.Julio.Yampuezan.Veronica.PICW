@@ -1,37 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CALCULADORA BÁSICA</title>
-     <link rel="stylesheet" href="./public/lib/bootstrap-5.3.6-dist/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Básica</title>
+  <link rel="stylesheet" href="./public/lib/bootstrap-5.3.6-dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container py-5"></div>   
-        <h1>CALCULADORA BÁSICA</h1>
-        <hr>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">CALCULADORA BÁSICA</h1>
 
-        <label for="txt_numero">INGRESE UN NÚMERO</label>
-        <input type="number" id="txt_numero" class="form-control mb-3">
-            <div class="mb-3">
-                <button class="btn btn-primary mr-2 mb-2" onclick="seleccionarOperacion('+')">SUMAR</button>
-                <button class="btn btn-primary mr-2 mb-2" onclick="seleccionarOperacion('-')">RESTAR</button>
-                <button class="btn btn-primary mr-2 mb-2" onclick="seleccionarOperacion('*')">MULTIPLICAR</button>
-                <button class="btn btn-primary mb-2" onclick="seleccionarOperacion('/')">DIVIDIR</button>
-            </div>
-
-        <label for="txt_numero">INGRESE OTRO NÚMERO</label>
-        <input type="number" id="txt_numero_2" class="form-control mb-3">
-
-        <button class="btn btn-success" onclick="calcularResultado()">= CALCULAR</button>
-        <button class="btn btn-danger ml-2" onclick="limpiar()">LIMPIAR</button>
-
-        <h1 class="text-dark fw-bold mt-4" id="resultado_final"></h1>
-
-
+    <div class="mb-3">
+      <label for="pantalla" class="form-label">INGRESE NÚMEROS</label>
+      <input type="text" id="pantalla" class="form-control" readonly>
     </div>
 
-<script src="./public/lib/bootstrap-5.3.6-dist/js/bootstrap.min.js"></script>
-<script src="./public/js/calculadora.js"></script>
+    <div class="row gx-2 gy-2 mb-3">
+      <!-- Botones de la calculadora -->
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('7')">7</button></div>
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('8')">8</button></div>
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('9')">9</button></div>
+      <div class="col-3"><button class="btn btn-primary w-100 py-3 fs-5" onclick="seleccionarOperacion('+')">+</button></div>
+
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('4')">4</button></div>
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('5')">5</button></div>
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('6')">6</button></div>
+      <div class="col-3"><button class="btn btn-primary w-100 py-3 fs-5" onclick="seleccionarOperacion('-')">-</button></div>
+
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('1')">1</button></div>
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('2')">2</button></div>
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('3')">3</button></div>
+      <div class="col-3"><button class="btn btn-primary w-100 py-3 fs-5" onclick="seleccionarOperacion('*')">*</button></div>
+
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('0')">0</button></div>
+      <div class="col-3"><button class="btn btn-secondary w-100 py-3 fs-5" onclick="agregarNumero('.')">.</button></div>
+      <div class="col-3"><button class="btn btn-success w-100 py-3 fs-5" onclick="calcularResultado()">=</button></div>
+      <div class="col-3"><button class="btn btn-primary w-100 py-3 fs-5" onclick="seleccionarOperacion('/')">/</button></div>
+
+      <div class="col-12 mt-2">
+        <button class="btn btn-danger w-100 py-3 fs-5" onclick="limpiar()">LIMPIAR</button>
+      </div>
+    </div>
+
+    <h2 class="text-center mt-4 text-dark fw-bold" id="resultado_final"></h2>
+  </div>
+
+  <script src="./public/js/calculadora.js"></script>
+  <script src="./public/lib/bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

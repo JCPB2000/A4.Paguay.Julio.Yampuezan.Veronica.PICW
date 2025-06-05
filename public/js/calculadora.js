@@ -1,28 +1,29 @@
 let operacion = "";
+let primerNumero = "";
+
+function agregarNumero(valor) {
+  const pantalla = document.getElementById("pantalla");
+  pantalla.value += valor;
+}
 
 function seleccionarOperacion(op) {
+  primerNumero = document.getElementById("pantalla").value;
   operacion = op;
-
-  let resultado = document.getElementById("resultado_final");
-  resultado.textContent = "OPERACIÓN SELECCIONADA: " + op;
-
-  // Limpiar los campos para ingresar el segundo número
-  document.getElementById("txt_numero").disabled = true;
+  document.getElementById("pantalla").value = "";
+  document.getElementById("resultado_final").textContent = "Operación: " + op;
 }
 
 function calcularResultado() {
-  let numero1 = document.getElementById("txt_numero").value;
-  let numero2 = document.getElementById("txt_numero_2").value;
-
+  let segundoNumero = document.getElementById("pantalla").value;
   let resultado = document.getElementById("resultado_final");
-  if (numero1 === "" || numero2 === "") {
-    resultado.textContent = "Debe ingresar ambos números.";
+
+  if (primerNumero === "" || segundoNumero === "") {
+    resultado.textContent = "Faltan números.";
     return;
   }
-  
 
-  let n1 = parseFloat(numero1);
-  let n2 = parseFloat(numero2);
+  let n1 = parseFloat(primerNumero);
+  let n2 = parseFloat(segundoNumero);
   let total;
 
   if (operacion === "+") {
@@ -38,12 +39,17 @@ function calcularResultado() {
     }
     total = n1 / n2;
   } else {
-    resultado.textContent = "Debe seleccionar una operación.";
+    resultado.textContent = "Selecciona una operación.";
     return;
   }
 
-  resultado.textContent = "RESULTADO: " + total;
- }
- function limpiar() {
+  document.getElementById("pantalla").value = total;
+  resultado.textContent = "Resultado: " + total;
+}
 
+function limpiar() {
+  document.getElementById("pantalla").value = "";
+  document.getElementById("resultado_final").textContent = "";
+  operacion = "";
+  primerNumero = "";
 }
